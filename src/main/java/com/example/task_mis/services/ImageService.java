@@ -42,7 +42,7 @@ public class ImageService {
         image.setUser(user);
 
         //Storing file in Database and the Directory
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String fileName = new RandomString(10)+StringUtils.cleanPath(file.getOriginalFilename());
         String FILE_DIR = "images/";
         image.setImageName(fileName);
         FileUpload.saveFile(FILE_DIR, fileName, file);
